@@ -12,12 +12,13 @@ jobs:
       - name: Project Summary
         run: |
           echo "--- Layihə Hesabatı ---"
-          echo "Layihə adı: Project1 (Math Graduation Exams)"
-          echo "Yoxlanılan tarix: $(date)"
+          echo "Layihə adı: Project1"
           echo "-----------------------"
           
       - name: Count test files
         run: |
-          echo "Layihədəki cəmi fayl sayı:"
-          ls -R | grep .txt | wc -l || echo "Hələ .txt faylı tapılmadı."
-        
+          echo "Layihədəki bütün faylların siyahısı:"
+          ls -R
+          echo "-----------------------"
+          echo "Tapılan PDF testlərinin sayı:"
+          find . -maxdepth 1 -iname "*.pdf" | wc -l        
